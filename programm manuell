@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace zumtesten
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int zahl1 = Convert.ToInt32(Console.ReadLine());
+            string rzeichen = Convert.ToString(Console.ReadLine());
+            int zahl2 = Convert.ToInt32(Console.ReadLine());
+            int ergebnis = Rechner(rzeichen, zahl1, zahl2);
+            string text = Meldung(ergebnis);
+            Console.WriteLine(text);
+            Console.ReadKey();
+
+        }
+        static int Rechner(string a, int b, int c)
+        {
+            if (a == "+")
+            {
+                return b + c;
+            }
+            else if (a == "-")
+            {
+                return b - c;
+            }
+            else if (a == "*")
+            {
+                return b * c;
+            }
+            else if (a == "/")
+            {
+                return b / c;
+            }
+            else
+            {
+                return 00000;
+            }
+
+        }
+        static string Meldung(int bla)
+        {
+            if (bla == 00000)
+            {
+                return "Error, falsches Rechenzeichen (+ - * /)";
+            }
+            else
+            {
+               string bla1 = Convert.ToString(bla);
+               return bla1;
+            }
+        }
+
+    }
+       
+}
